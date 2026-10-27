@@ -1,0 +1,21 @@
+---
+import { getCollection, render } from "astro:content";
+import Ressources from "../../layouts/Ressources.astro";
+
+// la fonction `getStaticPaths()` renvoie un chemin par fichier de `src/content/ressources/`
+export async function getStaticPaths() {
+  const ressources = await getCollection("ressources");
+  return ressources.map((ressource) => ({
+    params: { slug: ressource.id },
+    props: ressource,
+  }));
+}
+
+const ressource = Astro.props;
+// La fonction `render()` transforme le Markdown de la ressource en composant `<Content />`
+const { Content } = await render(ressource);
+---
+
+<Ressources {...ressource.data}>
+  <Content />
+</Ressources>
