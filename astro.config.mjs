@@ -6,7 +6,7 @@ import { defineConfig, fontProviders } from "astro/config";
 
 // https://astro.build/config
 export default defineConfig({
-  site: "https://minimal-blog.github.io",
+  site: "https://ewhalgand.github.io",
   base: "/minimal-blog",
   integrations: [mdx(), sitemap()],
   fonts: [
