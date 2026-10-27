@@ -1,21 +1,19 @@
 ---
 import { SITE_TITLE } from "../consts";
 import HeaderLink from "./HeaderLink.astro";
-
-const base = import.meta.env.BASE_URL.replace(/\/$/, "");
 ---
 
 <header>
   <nav>
     <h2>
-      <a href={base + "/"}>{SITE_TITLE}</a>
+      <a href="/minimal-blog/">{SITE_TITLE}</a>
     </h2>
     <div class="internal-links">
-      <HeaderLink href="/">Home</HeaderLink>
-      <HeaderLink href="/blog">Blog</HeaderLink>
-      <HeaderLink href="/ressources">Ressources</HeaderLink>
-      <HeaderLink href="/evenements">Evenements</HeaderLink>
-      <HeaderLink href="/about">About</HeaderLink>
+      <HeaderLink href="/minimal-blog/">Home</HeaderLink>
+      <HeaderLink href="/minimal-blog/blog">Blog</HeaderLink>
+      <HeaderLink href="/minimal-blog/ressources">Ressources</HeaderLink>
+      <HeaderLink href="/minimal-blog/evenements">Evenements</HeaderLink>
+      <HeaderLink href="/minimal-blog/about">About</HeaderLink>
     </div>
     <div class="social-links">
       <a href="https://m.webtoo.ls/@astro" target="_blank">

@@ -6,7 +6,6 @@ import Header from "../../components/Header.astro";
 import { SITE_DESCRIPTION, SITE_TITLE } from "../../consts";
 
 const ressources = await getCollection("ressources");
-const base = import.meta.env.BASE_URL.replace(/\/$/, "");
 ---
 
 <!doctype html>
@@ -91,7 +90,7 @@ const base = import.meta.env.BASE_URL.replace(/\/$/, "");
         {
           ressources.map((ressource) => (
             <li>
-              <a href={`${base}/ressources/${ressource.id}/`}>
+              <a href={`/minimal-blog/ressources/${ressource.id}/`}>
                 {ressource.data.title}
               </a>
               ({ressource.data.category})
