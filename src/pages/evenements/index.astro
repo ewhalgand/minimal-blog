@@ -6,6 +6,7 @@ import Header from "../../components/Header.astro";
 import { SITE_DESCRIPTION, SITE_TITLE } from "../../consts";
 
 const evenements = await getCollection("evenements");
+const base = import.meta.env.BASE_URL.replace(/\/$/, "");
 ---
 
 <!doctype html>
@@ -90,7 +91,7 @@ const evenements = await getCollection("evenements");
         {
           evenements.map((evenement) => (
             <li>
-              <a href={`/evenements/${evenement.id}/`}>
+              <a href={`${base}/evenements/${evenement.id}/`}>
                 {evenement.data.title}
               </a>
             </li>
